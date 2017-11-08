@@ -1,0 +1,10 @@
+@charset "UTF-8";
+.login_bg{
+    background-color: #222d32;
+}
+.container>.row>div{
+    margin-top:150px;
+}
+.panel h4{
+    text-align: center;
+}

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>乐淘管理系统-登录</title>
+    <!--导入boostrap.css-->
+    <link rel="stylesheet" href="./lib/bootstrap/css/bootstrap.css"/>
+    <!--导入表单校验插件-->
+    <link rel="stylesheet" href="./lib/bootstrap-validator/css/bootstrapValidator.min.css"/>
+    <!--导入加载进度条插件-->
+    <link rel="stylesheet" href="./lib/nprogress/nprogress.css"/>
+    <!--导入公共common.css-->
+    <link rel="stylesheet" href="./css/common.css"/>
+</head>
+<body class="login_bg">
+
+<!--版心container-->
+<div class="container">
+    <!--删格系统,每行12列,那么就3列,每一列分4份!偏移4份-->
+    <div class="row">
+        <div class="col-md-4 col-md-offset-4">
+            <!--组件>带标题的面板-->
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <h4>后天管理系统</h4>
+                </div>
+                <div class="panel-body">
+                    <!--全局css样式>表单-->
+                    <form class="form-horizontal">
+                        <div class="form-group">
+                            <!--改变删格系统,用户名2>3;密码10>9-->
+                            <label for="inputEmail3" class="col-sm-3 control-label">用户名</label>
+                            <div class="col-sm-9">
+                                <input type="email" class="form-control" id="inputEmail3" placeholder="请输入用户名">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="inputPassword3" class="col-sm-3 control-label">密码</label>
+                            <div class="col-sm-9">
+                                <input type="password" class="form-control" id="inputPassword3" placeholder="请输入密码">
+                            </div>
+                        </div>
+                        <!--<div class="form-group">-->
+                            <!--<div class="col-sm-offset-2 col-sm-10">-->
+                                <!--<div class="checkbox">-->
+                                    <!--<label>-->
+                                        <!--<input type="checkbox"> Remember me-->
+                                    <!--</label>-->
+                                <!--</div>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                        <div class="form-group">
+                            <div class="col-sm-offset-3 col-sm-6">
+                                <!--添加左右浮动-->
+                                <button type="reset" class="btn btn-default pull-left">重置</button>
+                                <!--删格系统中:删除默认样式btn-default,添加颜色样式btn-primary-->
+                                <button type="submit" class="btn  pull-right btn-primary">登录</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<!--导入boostrap.js-->
+<script src="./lib/jquery/jquery.min.js"></script>
+<!--导入boostrap.js-->
+<script src="lib/bootstrap/js/bootstrap.min.js"></script>
+<!--导入表单校验插件-->
+<script src="./lib/bootstrap-validator/js/bootstrapValidator.min.js"></script>
+<!--导入进度条nprogress.js-->
+<script src="./lib/nprogress/nprogress.js"></script>
+<!--导入我的公共common.js-->
+<script src="./js/common.js"></script>
+<!--导入登录模块login.js-->
+<script src="js/login.js"></script>
+</body>
+</html>
