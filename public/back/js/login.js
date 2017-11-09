@@ -67,8 +67,46 @@ $(function() {
     });
 
     //4.为了校验成功之后,不让表单自动提交过去,那么,可以在校验成功之后进行点击,防止提交表单(禁用);同时,
-    //可以在校验成功之后,触发一个事件
+    //(不能用submit提交,因为这个要跳转,如果跳转了,页面返回,要重新再写,但是用ajax提交,如果不成功,那么,就一直待在这个页面)
 
+    //5.给表单注册校验成功事件;由于表单校验成功之后,会触发一个事件(success.form.bv)--->点击提交,可以阻止默认行为(不能用retrun flase-->后面代码不能执行)
+    $form.on('success.form.bv', function (e) {
+        e.preventDefault();
+        //console.log('校验成功,点击之后,但页面不跳转,没提交表单数据,那么,可以用ajax提交');
+        //使用ajax提交逻辑()
+        //5.1获取表单中的用户名框中的值
+        //var usernameVal = $("#username").val();
+        //var passwordVal = $('#password').val();
+        //console.log(usernameVal);
+        //console.log(passwordVal);
+        $.ajax({
+            url:"/employee/employeeLogin",
+            type:"post",
+            //data:{
+            //    username:usernameVal,
+            //    password:passwordVal
+            //},
+
+            //通过表单.serialize()方法获取表单中的每一个值
+            data:$form.serialize(),
+            success:function(data){
+                console.log(data.error);
+                //console.log(data.success);
+                //6.返回来的数据,如果是返回的是成功,那么就跳转到首页
+                if(data.success){
+                    window.location.href = "index.html";
+                }
+                if(data.error === 1000){
+                    //7.如果提交返回的数据是1000,那么,就是用户名错误(由于该提示太过low)
+                    alert('用户名错误');
+                }
+                if(data.error === 1001){
+                    //7.如果提交返回的数据是1001,那么,就是用户名错误(由于该提示太过low)
+                    alert('密码错误');
+                }
+            }
+        });
+    });
 })
 
 
