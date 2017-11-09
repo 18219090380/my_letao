@@ -110,7 +110,13 @@ html,body{
 }
 /*报表栏-----左报表*/
 .rt_main .content_main .echarts .left_echarts{
-    width: 600px;
-    height: 400px;
+    width: 45%;
+    height:400px;
     /*background-color:fuchsia;*/
+}
+/*报表栏----右报表*/
+.rt_main .content_main .echarts .right_echarts{
+    width: 50%;
+    height: 400px;
+    background-color:fuchsia;
 }
