@@ -74,3 +74,16 @@
     };
     // 使用刚指定的配置项和数据显示图表。
     myChart_pie.setOption(option2);
+
+//功能需求3:鼠标点击左边,左边侧边栏隐藏(右边通过设置一个类,点击时候,隐藏左边,同时把这个类设置给右边)
+$('.toggle_sh').on("click",function(){
+    //左边栏隐藏
+    $('.lt_aside').toggleClass("now");
+    //改变右边栏中的样式(把padding-left改成0)
+    $('.rt_main').toggleClass('now');
+})
+//功能需求4:鼠标点击右边,弹出模太框
+$(".bomb_box").on('click',function(){
+    //显示模态框(看bootstrap用法--->javascript插件--->模态框)
+    $('.tankuang').modal('toggle');
+})

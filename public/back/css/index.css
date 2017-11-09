@@ -10,7 +10,16 @@ html,body{
     position:absolute;
     left: 0px;
     top:0px;
+    /*设置一个侧边栏回来的过渡*/
+    transition: all 1s;
 }
+
+/*单独控制一下左边隐藏动画*/
+.lt_aside.now{
+   left: -180px;
+    transition:all 1s;
+}
+
 /*顶部商标*/
 .brand{
     width: 100%;
@@ -63,6 +72,13 @@ html,body{
     background-color: antiquewhite;
     /*padding-left: 180px;*/
     margin-left: 180px;
+    /*设置一个切换回来的过渡*/
+    transition: all 1s;
+}
+/*给右边设置一个控制类*/
+.rt_main.now{
+    margin-left: 0px;
+    transition: all 1s;
 }
 /*顶部banner*/
 .rt_main .top_bar{
@@ -118,5 +134,6 @@ html,body{
 .rt_main .content_main .echarts .right_echarts{
     width: 50%;
     height: 400px;
-    background-color:fuchsia;
+    /*background-color:fuchsia;*/
 }
+/*模态框*/

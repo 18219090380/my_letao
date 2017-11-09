@@ -69,11 +69,11 @@
     <!--顶部banner-->
     <div class="top_bar">
         <!--缩放-->
-        <a href="#" class="toggle_sh">
+        <a href="#">
             <i class="glyphicon glyphicon-align-justify scale"></i>
         </a>
         <!--退出系统-->
-        <a href="#" class="bomb_box">
+        <a href="#">
             <i class="glyphicon glyphicon-log-out log_out"></i>
         </a>
     </div>
@@ -84,43 +84,11 @@
             <!--组件>路径导航-->
             <ol class="breadcrumb">
                 <li><a href="#">管理系统</a></li>
-                <li class="active">首页</li>
+                <li class="active">商品管理</li>
             </ol>
         </div>
-        <!--报表栏-->
-        <div class="echarts">
-            <!--左边报表-->
-            <div class="left_echarts pull-left"></div>
-            <!--右边报表-->
-            <div class="right_echarts pull-right"></div>
-        </div>
     </div>
 </div>
-
-<!--模态框:无需定位,直接放上去,默认定位到居中-->
-<div class="modal fade tankuang">
-    <!--添加一个类,控制模态框大小-->
-    <div class="modal-dialog modal-sm">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title">温馨提示</h4>
-            </div>
-            <!--添加一个类;全局css样式---辅助类--文本颜色-->
-            <div class="modal-body text-danger">
-                <p>
-                    <i class="glyphicon glyphicon-info-sign"></i>
-                    您确定要退出后台管理系统吗?
-                </p>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
-                <button type="button" class="btn btn-primary">确定</button>
-            </div>
-        </div>
-    </div>
-</div>
-
 
 <!--导入boostrap.js-->
 <script src="./lib/jquery/jquery.min.js"></script>
