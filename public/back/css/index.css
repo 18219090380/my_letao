@@ -1,0 +1,116 @@
+@charset "UTF-8";
+html,body{
+    height: 100%;
+}
+/*左边*/
+.lt_aside{
+    width: 180px;
+    height: 100%;
+    background-color:#222d32;
+    position:absolute;
+    left: 0px;
+    top:0px;
+}
+/*顶部商标*/
+.brand{
+    width: 100%;
+    height:50px;
+    background-color:#367fa9;
+    text-align: center;
+    line-height: 50px;
+}
+.brand a{
+    color:#fff;
+    font-size: 20px;
+}
+/*个人头像*/
+.personal_icon{
+    width: 100%;
+    height: 150px;
+    text-align: center;
+}
+/*个人头像*/
+.personal_icon img{
+    display: block;
+    margin:40px auto;
+    margin-bottom: 10px;
+    width: 70px;
+    height: 70px;
+    border-radius: 35px;
+}
+/*超级管理员*/
+.personal_icon span{
+    color:#fff;
+    font-size: 16px;
+}
+/*导航栏*/
+.nav_menus{
+    padding-left: 30px;
+}
+.nav_menus ul li a{
+    color:#ddd;
+    display: block;
+    line-height: 40px;
+    height: 40px;
+}
+/*分类*/
+.nav_menus .stage ul li a{
+    padding-left: 20px;
+}
+/*右边*/
+.rt_main{
+    height: 100%;
+    background-color: antiquewhite;
+    /*padding-left: 180px;*/
+    margin-left: 180px;
+}
+/*顶部banner*/
+.rt_main .top_bar{
+    height: 50px;
+    /*line-height: 50px;*/
+    width: 100%;
+    background-color:#3c8dbc;
+    padding:0px 20px;
+    position: relative;
+}
+/*左边图标*/
+.rt_main .top_bar a:first-child{
+    position: absolute;
+    top:12px;
+    left:20px;
+    display: block;
+    height: 50px;
+    /*line-height: 50px;*/
+}
+/*右边图片*/
+.rt_main .top_bar a:last-child{
+    position: absolute;
+    top:0px;
+    right:20px;
+    display: block;
+    height: 50px;
+    line-height: 50px;
+}
+/*顶部图标*/
+.rt_main .top_bar .scale{
+    color:#fff;
+    font-size: 18px;
+}
+.rt_main .top_bar .log_out{
+    color:#fff;
+    font-size: 18px;
+}
+/*右边内容主体*/
+.rt_main .content_main{
+    padding:20px 20px 0px;
+}
+/*右边内容主体导航*/
+.rt_main .content_main .bread_nav .breadcrumb{
+    font-size: 16px;
+}
+/*报表栏-----左报表*/
+.rt_main .content_main .echarts .left_echarts{
+    width: 600px;
+    height: 400px;
+    /*background-color:fuchsia;*/
+}

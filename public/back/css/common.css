@@ -1,4 +1,19 @@
 @charset "UTF-8";
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+ul{
+   list-style: none;
+}
+a{
+    text-decoration: none;
+}
+/*清除boostrap默认的样式*/
+a:link,a:visited,a:hover,a:active{
+    text-decoration: none;
+}
 .login_bg{
     background-color: #222d32;
 }

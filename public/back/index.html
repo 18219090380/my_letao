@@ -2,9 +2,115 @@
 <html>
 <head lang="en">
     <meta charset="UTF-8">
-    <title></title>
+    <title>我的首页</title>
+    <!--导入boostrap.css-->
+    <link rel="stylesheet" href="./lib/bootstrap/css/bootstrap.css"/>
+    <!--导入表单校验插件-->
+    <link rel="stylesheet" href="./lib/bootstrap-validator/css/bootstrapValidator.min.css"/>
+    <!--导入加载进度条插件-->
+    <link rel="stylesheet" href="./lib/nprogress/nprogress.css"/>
+    <!--导入公共common.css-->
+    <link rel="stylesheet" href="./css/common.css"/>
+    <!--导入index.css文件-->
+    <link rel="stylesheet" href="./css/index.css"/>
+    <!--导入echarts.js-->
+    <script src="lib/echarts/echarts.min.js"></script>
 </head>
 <body>
-首页
+<!--左边-->
+<div class="lt_aside">
+    <!--品牌-->
+    <div class="brand">
+        <a href="#">黑马12期</a>
+    </div>
+    <!--个人头像-->
+    <div class="personal_icon">
+        <img src="./images/default.png" alt="个人头像"/>
+        <span>超级管理员</span>
+    </div>
+    <!--导航栏-->
+    <div class="nav_menus">
+        <ul>
+            <li><a href="#">
+                <i class="glyphicon glyphicon-user"></i>
+                用户管理
+            </a></li>
+            <li>
+                <a href="#">
+                    <i class="glyphicon glyphicon-list"></i>
+                    分类管理
+                </a>
+                <!--分类-->
+                <div class="stage">
+                    <!--&lt;!&ndash;一级分类&ndash;&gt;-->
+                    <!--<div class="first_stage"></div>-->
+                    <!--&lt;!&ndash;二级分类&ndash;&gt;-->
+                    <!--<div class="second_stage"></div>-->
+                    <ul>
+                        <li>
+                            <a href="#">一级分类</a>
+                        </li>
+                        <li>
+                            <a href="#">二级分类</a>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+            <li>
+                <a href="#">
+                <i class="glyphicon glyphicon-tags"></i>
+                商品管理
+            </a></li>
+        </ul>
+    </div>
+</div>
+<!--右边-->
+<div class="rt_main">
+    <!--顶部banner-->
+    <div class="top_bar">
+        <!--缩放-->
+        <a href="#">
+            <i class="glyphicon glyphicon-align-justify scale"></i>
+        </a>
+        <!--退出系统-->
+        <a href="#">
+            <i class="glyphicon glyphicon-log-out log_out"></i>
+        </a>
+    </div>
+    <!--内容主体-->
+    <div class="content_main">
+        <!--面包屑导航栏-->
+        <div class="bread_nav">
+            <!--组件>路径导航-->
+            <ol class="breadcrumb">
+                <li><a href="#">管理系统</a></li>
+                <li class="active">首页</li>
+            </ol>
+        </div>
+        <!--报表栏-->
+        <div class="echarts">
+            <!--左边报表-->
+            <div class="left_echarts"></div>
+            <!--右边报表-->
+            <div class="right_echarts">
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--导入boostrap.js-->
+<script src="./lib/jquery/jquery.min.js"></script>
+<!--导入boostrap.js-->
+<script src="lib/bootstrap/js/bootstrap.min.js"></script>
+<!--导入表单校验插件-->
+<script src="./lib/bootstrap-validator/js/bootstrapValidator.min.js"></script>
+<!--导入进度条nprogress.js-->
+<script src="./lib/nprogress/nprogress.js"></script>
+<!--导入我的公共common.js-->
+<script src="./js/common.js"></script>
+<!--导入首页index.js-->
+<script src="js/index.js"></script>
+
 </body>
 </html>
