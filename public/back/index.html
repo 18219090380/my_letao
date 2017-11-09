@@ -31,33 +31,29 @@
     <!--导航栏-->
     <div class="nav_menus">
         <ul>
-            <li><a href="#">
+            <li><a href="user.html">
                 <i class="glyphicon glyphicon-user"></i>
                 用户管理
             </a></li>
             <li>
-                <a href="#">
+                <a href="javascript:;" class="sort_manage">
                     <i class="glyphicon glyphicon-list"></i>
                     分类管理
                 </a>
-                <!--分类-->
-                <div class="stage">
-                    <!--&lt;!&ndash;一级分类&ndash;&gt;-->
-                    <!--<div class="first_stage"></div>-->
-                    <!--&lt;!&ndash;二级分类&ndash;&gt;-->
-                    <!--<div class="second_stage"></div>-->
+                <!--分类---用bootsrap设置一个内置类隐藏(不好用下拉),直接用样式-->
+                <div class="stage" style="display: none">
                     <ul>
                         <li>
-                            <a href="#">一级分类</a>
+                            <a href="first_stage.html">一级分类</a>
                         </li>
                         <li>
-                            <a href="#">二级分类</a>
+                            <a href="second_stage.html">二级分类</a>
                         </li>
                     </ul>
                 </div>
             </li>
             <li>
-                <a href="#">
+                <a href="producs.html">
                 <i class="glyphicon glyphicon-tags"></i>
                 商品管理
             </a></li>
@@ -115,7 +111,8 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
-                <button type="button" class="btn btn-primary">确定</button>
+                <!--给确定按钮设置一个btn_confirm类,点击退出确定之后,发送ajax请求,根据数据判断是否退出了-->
+                <button type="button" class="btn btn-primary btn_confirm">确定</button>
             </div>
         </div>
     </div>
@@ -133,7 +130,7 @@
 <!--导入我的公共common.js-->
 <script src="./js/common.js"></script>
 <!--导入首页index.js-->
-<script src="js/index.js"></script>
+<!--<script src="js/index.js"></script>-->
 
 </body>
 </html>
