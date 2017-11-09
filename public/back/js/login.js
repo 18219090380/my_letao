@@ -33,6 +33,12 @@ $(function() {
                     notEmpty: {
                         message: '用户名不能为空'
                     },
+
+                    //自定义一个普通校验
+                    callback:{
+                        message:'用户名错误'
+                    },
+
                     ////长度校验
                     //stringLength: {
                     //    min: 6,
@@ -55,6 +61,12 @@ $(function() {
                     notEmpty:{
                         message:"密码不能为空"
                     },
+
+                    //3.6自定义一个密码校验失败
+                    callback:{
+                        message:'密码错误'
+                    },
+
                     //3.6校验密码长度为6-12位
                     stringLength:{
                         min:6,
@@ -98,15 +110,33 @@ $(function() {
                 }
                 if(data.error === 1000){
                     //7.如果提交返回的数据是1000,那么,就是用户名错误(由于该提示太过low)
-                    alert('用户名错误');
+                    //alert('用户名错误');
+                    //8.使用updateStatus方法,主动把username这个字段变成校验失败(第一个参数:让谁提示)
+                    var validator = $form.data('bootstrapValidator');
+                    validator.updateStatus("username",'INVALID','callback');
                 }
                 if(data.error === 1001){
                     //7.如果提交返回的数据是1001,那么,就是用户名错误(由于该提示太过low)
-                    alert('密码错误');
+                    //alert('密码错误');
+
+                    //9..使用updateStatus方法,主动把password这个字段变成校验失败(第一个参数:让谁提示)
+                    $form.data('bootstrapValidator').updateStatus('password','INVALID','callback');
                 }
             }
         });
     });
+
+
+    //二.需求:点击重置的时候,把当前的validator插件设置好的样式和图标清除掉
+    //1.获取重置按钮
+    var reset_btn = $(".reset_btn");
+    //2.给重置按钮设置点击事件
+    reset_btn.on("click",function(){
+        //3.初始化表单校验插件(表单.方法),表单校验的validator实例
+        var validator = $form.data('bootstrapValidator');
+        //4.调用表单校验实例的方法(重置表单方法---把当前的图片和样式清除)
+        validator.resetForm();
+    })
 })
 
 
