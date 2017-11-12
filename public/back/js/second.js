@@ -40,7 +40,7 @@ $(function () {
     $('#addBtn').on('click', function () {
         //3.1弹出二级分类框
         $('#second_page').modal('show');
-    })
+    });
 
 
 

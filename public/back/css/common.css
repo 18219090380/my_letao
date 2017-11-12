@@ -133,3 +133,17 @@ a:link, a:visited, a:hover, a:active {
 .lt_content .btn{
   margin-bottom: 20px;
 }
+/*上传图片按钮*/
+.file_img{
+  position: relative;
+}
+#fileupload{
+  position: absolute;
+  bottom: 5px;
+  right: -3px;
+  opacity: 0;
+}
+/*控制th默认左对齐为中间对齐*/
+.table tr th{
+  text-align: center;
+}
