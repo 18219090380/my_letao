@@ -1,164 +1,135 @@
 @charset "UTF-8";
-*{
-    margin:0;
-    padding:0;
-    box-sizing: border-box;
-}
-ul{
-   list-style: none;
-}
-a{
-    text-decoration: none;
-}
-/*清除boostrap默认的样式*/
-a:link,a:visited,a:hover,a:active{
-    text-decoration: none;
-}
-.login_bg{
-    background-color: #222d32;
-}
-.container>.row>div{
-    margin-top:150px;
-}
-.panel h4{
-    text-align: center;
-}
-@charset "UTF-8";
-html,body{
-    height: 100%;
-}
-/*左边*/
-.lt_aside{
-    width: 180px;
-    height: 100%;
-    background-color:#222d32;
-    position:absolute;
-    left: 0px;
-    top:0px;
-    /*设置一个侧边栏回来的过渡*/
-    transition: all 1s;
+html,body {
+  height: 100%;
 }
 
-/*单独控制一下左边隐藏动画*/
-.lt_aside.now{
-    left: -180px;
-    transition:all 1s;
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
 }
 
-/*顶部商标*/
-.brand{
-    width: 100%;
-    height:50px;
-    background-color:#367fa9;
-    text-align: center;
-    line-height: 50px;
+a {
+  text-decoration: none;
 }
-.brand a{
-    color:#fff;
-    font-size: 20px;
+
+a:link, a:visited, a:hover, a:active {
+  text-decoration: none;
 }
-/*个人头像*/
-.personal_icon{
-    width: 100%;
-    height: 150px;
-    text-align: center;
+
+
+
+.login_bg {
+  background-color: #222d32;
 }
-/*个人头像*/
-.personal_icon img{
-    display: block;
-    margin:40px auto;
-    margin-bottom: 10px;
-    width: 70px;
-    height: 70px;
-    border-radius: 35px;
+
+.mt_150 {
+  margin-top: 150px;
 }
-/*超级管理员*/
-.personal_icon span{
-    color:#fff;
-    font-size: 16px;
+
+.panel h4 {
+  text-align: center;
 }
-/*导航栏*/
-.nav_menus{
-    padding-left: 30px;
+
+
+/*首页*/
+.lt_aside {
+  width: 180px;
+  height: 100%;
+  background-color: #222d32;
+  position: absolute;
+  left: 0;
+  transition: all 1s;
 }
-.nav_menus ul li a{
-    color:#ddd;
-    display: block;
-    line-height: 40px;
-    height: 40px;
+
+.lt_aside.now {
+  left: -180px;
 }
-/*分类*/
-.nav_menus .stage ul li a{
-    padding-left: 20px;
+
+.lt_aside .brand a {
+  display: block;
+  width: 180px;
+  height: 50px;
+  background-color: #367fa9;
+  color: #fff;
+  text-align: center;
+  line-height: 50px;
+  font-size: 24px;
 }
-/*右边*/
-.rt_main{
-    height: 100%;
-    background-color: antiquewhite;
-    /*padding-left: 180px;*/
-    margin-left: 180px;
-    /*设置一个切换回来的过渡*/
-    transition: all 1s;
+
+.lt_aside .user {
+  width: 180px;
+  height: 150px;
 }
-/*给右边设置一个控制类*/
-.rt_main.now{
-    margin-left: 0px;
-    transition: all 1s;
+
+.lt_aside .user img {
+  width: 80px;
+  height: 80px;
+  display: block;
+  margin: 30px auto 0;
+  border-radius: 50%;
 }
-/*顶部banner*/
-.rt_main .top_bar{
-    height: 50px;
-    /*line-height: 50px;*/
-    width: 100%;
-    background-color:#3c8dbc;
-    padding:0px 20px;
-    position: relative;
+
+.lt_aside .user p {
+  height: 40px;
+  line-height: 40px;
+  color: #fff;
+  text-align: center;
+  font-size: 16px;
 }
-/*左边图标*/
-.rt_main .top_bar a:first-child{
-    position: absolute;
-    top:12px;
-    left:20px;
-    display: block;
-    height: 50px;
-    /*line-height: 50px;*/
+
+
+.lt_aside .nav a {
+  display: block;
+  height: 40px;
+  line-height: 40px;
+  color: #ddd;
+  padding-left: 30px;
+  border: 3px solid transparent;
 }
-/*右边图片*/
-.rt_main .top_bar a:last-child{
-    position: absolute;
-    top:0px;
-    right:20px;
-    display: block;
-    height: 50px;
-    line-height: 50px;
+
+
+.lt_aside .nav a.now {
+  border-left-color: #069;
+  background-color: #1d1f21;
+  color: #fff;
 }
-/*顶部图标*/
-.rt_main .top_bar .scale{
-    color:#fff;
-    font-size: 18px;
+
+.lt_aside .nav .child a {
+  padding-left: 50px;
 }
-.rt_main .top_bar .log_out{
-    color:#fff;
-    font-size: 18px;
+
+.lt_main {
+  height: 100%;
+  padding-left: 180px;
+  transition: all 1s;
+  background-color: antiquewhite;
 }
-/*右边内容主体*/
-.rt_main .content_main{
-    padding:20px 20px 0px;
+
+.lt_main.now{
+  padding-left: 0;
 }
-/*右边内容主体导航*/
-.rt_main .content_main .bread_nav .breadcrumb{
-    font-size: 16px;
+
+.lt_main .topbar {
+  height: 50px;
+  background-color: #3c8dbc;
+  padding: 0 20px;
+  line-height: 50px;
+  margin-bottom: 20px;
 }
-/*报表栏-----左报表*/
-.rt_main .content_main .echarts .left_echarts{
-    width: 45%;
-    height:400px;
-    /*background-color:fuchsia;*/
+
+.lt_main .topbar a{
+  color: #fff;
+  font-size: 16px;
 }
-/*报表栏----右报表*/
-.rt_main .content_main .echarts .right_echarts{
-    width: 50%;
-    height: 400px;
-    /*background-color:fuchsia;*/
+
+
+.pic_left,
+.pic_right {
+  width: 45%;
+  height: 400px;
 }
-/*模态框*/
+/*添加分类按钮*/
+.lt_content .btn{
+  margin-bottom: 20px;
+}

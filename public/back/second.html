@@ -2,7 +2,7 @@
 <html lang="zh-CN">
 <head>
   <meta charset="UTF-8">
-  <title>乐淘管理系统-首页</title>
+  <title>乐淘管理系统-分类管理</title>
   <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.min.css">
   <link rel="stylesheet" href="lib/bootstrap-validator/css/bootstrapValidator.min.css">
   <link rel="stylesheet" href="lib/nprogress/nprogress.css">
@@ -21,7 +21,7 @@
   <div class="nav">
     <ul>
       <li>
-        <a class="now" href="user.html">
+        <a href="user.html">
           <span class="glyphicon glyphicon-user"></span>
           用户管理
         </a>
@@ -31,9 +31,9 @@
           <span class="glyphicon glyphicon-list"></span>
           分类管理
         </a>
-        <div class="child" style="display: none;">
+        <div class="child" style="display: block;">
           <a href="first.html">一级分类</a>
-          <a href="second.html">二级分类</a>
+          <a class="now" href="second.html">二级分类</a>
         </div>
         
       </li>
@@ -59,49 +59,38 @@
     <!--面包屑导航-->
     <ol class="breadcrumb">
       <li><a href="#">管理系统</a></li>
-      <li class="active">用户管理</li>
+      <li><a href="#">分类管理</a></li>
+      <li class="active">二级分类</li>
     </ol>
 
 
     <!--内容区域-->
     <div class="lt_content">
+        <!--添加分类-->
+        <button id="addBtn"  class="btn btn-default">添加分类</button>
         <!--表格-->
-      <table class="table table-bordered" style="text-align: center">
-        <!--表头-->
-        <thead>
+        <table class="table table-bordered" style="text-align: center">
+          <!--表头-->
+          <thead>
             <tr>
-              <td style="width: 10%">序号</td>
-              <td style="width: 30%">用户名</td>
-              <td style="width: 30%">手机号</td>
-              <td style="width: 20%">状态</td>
-              <td style="width: 10%">操作</td>
+              <td width="10%">序号</td>
+              <td width="30%">分类名称</td>
+              <td width="30%">分类名称</td>
+              <td width="30%">分类名称</td>
             </tr>
-        </thead>
-        <!--表体:可用作事件委托的父元素-->
-        <tbody>
-            <!--<tr>-->
-              <!--<td>1</td>-->
-              <!--<td>itcast</td>-->
-              <!--<td>121442525</td>-->
-              <!--<td>正常</td>-->
-              <!--<td>-->
-                <!--<button type="button" class="btn btn-danger btn-xs">禁用</button>-->
-                <!--<button type="button" class="btn btn-primary btn-xs" style="display: none">启用</button>-->
-              <!--</td>-->
-            <!--</tr>-->
-        </tbody>
-      </table>
-
-      <!--分页页面结构-->
+          </thead>
+          <!--表体-->
+          <tbody>
+          <!--挖个坑-->
+          </tbody>
+        </table>
+        <!--分页插件:需要创建盒子-->
         <div class="text-right">
-          <ul id="paginator">
-              <!--插件生成-->
-          </ul>
+          <ul class="pagination"></ul>
         </div>
     </div>
   </div>
 </div>
-
 
 
 <!--role aria sr-only: 屏幕阅读器使用-->
@@ -126,20 +115,50 @@
   </div>
 </div>
 
-<!--启用禁用模态框-->
+<!--弹出添加分类中的二级分类框-->
 <!--role aria sr-only: 屏幕阅读器使用-->
-<div class="modal fade" tabindex="-1" id="btn_logoutModal">
+<div class="modal fade" tabindex="-1" id="second_page">
   <div class="modal-dialog modal-sm">
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" ><span>&times;</span></button>
-        <h4 class="modal-title">温馨提示</h4>
+        <h4 class="modal-title">添加分类</h4>
       </div>
       <div class="modal-body">
-        <p class="text-danger">
-          <span class="glyphicon glyphicon-info-sign"></span>
-          您确定要启用itcast这个用户吗？
-        </p>
+        <!--<p class="text-danger">-->
+        <!--<span class="glyphicon glyphicon-info-sign"></span>-->
+        <!--您确定要退出后台管理系统吗？-->
+        <!--</p>-->
+        <!--请输入一级分类名称:都有一个组-->
+        <form action="#" id="first_xiaoyan">
+          <!--一级分类-->
+          <div class="form-group">
+            <div class="dropdown btn-xs">
+              <span>一级分类:</span>
+              <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                请选择
+                <span class="caret"></span>
+              </button>
+              <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                <!--下面一级菜单需要动态渲染数据一级数据-->
+                <li><a href="#">户外管</a></li>
+              </ul>
+            </div>
+          </div>
+          <!--一组二级文本框-->
+          <div class="form-group">
+            <input type="text" name="categoryName" class="form-control" id="exampleInputEmail3" placeholder="请输入二级分类名称">
+          </div>
+          <!--上传图片按钮-->
+          <div class="form-group file_img">
+            <button class="btn btn-default" type="button">上传图片</button>
+            <input id="fileupload" type="file" name="file[]">
+          </div>
+          <!--需要上传显示的图片-->
+          <div class="form-group">
+            <img src="./mobile/default.png" width="70px" height="70px" alt="上传的图片"/>
+          </div>
+        </form>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
@@ -149,46 +168,39 @@
   </div>
 </div>
 
-
-
-
-
-<!--创建表格模板-->
+<!--创建二级分类模板-->
 <script type="text/html" id="tpl">
   {{each rows v i}}
   <tr>
-    <!--第一页的时候,i+1;那么,第二页的时候,为6-->
-    <td>{{(page-1)*5+i+1}}</td>
-    <td>{{v.username}}</td>
-    <td>{{v.mobile}}</td>
-    <td>{{v.isDelete === 1?'正常':'禁用'}}</td>
+    <!--因为点击分页第几页的时候,就显示该第二页需要从id等于6的数据开始渲染-->
+    <td>{{(page-1)*size+i+1}}</td>
+    <td>{{v.categoryName}}</td>
+    <td>{{v.brandName}}</td>
     <td>
-      <!--根据状态来判断禁用显示还是启用-->
-      {{if v.isDelete == 1}}
-      <button type="button" class="btn btn-danger btn-xs stop_btn" data-id="{{v.id}}" data-delete="0">禁用</button>
-      {{/if}}
-      {{if v.isDelete == 0}}
-      <button type="button" class="btn btn-primary btn-xs" data-id="{{v.id}}" data-delete="1">启用</button>
-      {{/if}}
+      <img src="{{v.brandLogo}}" width="50px" height="50px" alt=""/>
     </td>
   </tr>
   {{/each}}
 </script>
 
 
-
 <script src="lib/jquery/jquery.min.js"></script>
 <script src="lib/bootstrap/js/bootstrap.min.js"></script>
+<!--表单校验-->
 <script src="lib/bootstrap-validator/js/bootstrapValidator.min.js"></script>
 <script src="lib/nprogress/nprogress.js"></script>
 <script src="lib/echarts/echarts.min.js"></script>
-<!--导入分页插件-->
-<script src="lib/bootstrap-paginator/bootstrap-paginator.min.js"></script>
+<script src="js/common.js"></script>
+<!--导入second.js-->
+<script src="./js/second.js"></script>
 <!--导入模板引擎-->
 <script src="./lib/template/template-web.js"></script>
-<!--导入公共js-->
-<script src="js/common.js"></script>
-<!--导入user.js-->
-<script src="./js/user.js"></script>
+<!--导入分页插件-->
+<script src="./lib/bootstrap-paginator/bootstrap-paginator.min.js"></script>
+<!--依次导入文件图片上传插件-->
+<script src="./lib/jquery-fileupload/jquery.ui.widget.js"></script>
+<script src="./lib/jquery-fileupload/jquery.iframe-transport.js"></script>
+<script src="./lib/jquery-fileupload/jquery.fileupload.js"></script>
+
 </body>
 </html>

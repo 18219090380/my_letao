@@ -96,7 +96,7 @@ $(function () {
                     $form[0].reset();
                     $form.data('bootstrapValidator').resetForm();
                     $('.dropdown-text').html('请选择');
-                    $form.find('img').attr('src','images/none.png');
+                    $form.find('img').attr('src','mobile/none.png');
                 }
             }
         });
