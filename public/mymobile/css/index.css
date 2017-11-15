@@ -1,0 +1,51 @@
+
+/*中间区域*/
+/*控制轮播图图片的宽度高度*/
+.main .lt_wrapper .mui-slider-group img{
+    width: 100%;
+}
+/*导航*/
+.main .nav_bar{
+    padding:10px;
+}
+/*控制图片*/
+.main .nav_bar a img{
+    float: left;
+    width: 33.3333%;
+}
+/*产品列表*/
+.products{
+    padding:5px 10px;
+}
+/*控制li标签*/
+.products ul li{
+    float: left;
+    width:48%;
+    border:1px solid #ccc;
+    text-align: center;
+}
+/*单独控制偶数的margin或者padding-left*/
+.products ul li:nth-child(2n){
+    margin-left: 4%;
+    margin-bottom: 10px;
+}
+/*单独控制奇数的底部距离*/
+.products ul li:nth-child(2n+1){
+    margin-bottom: 10px;
+}
+/*控制价格颜色*/
+.products ul li span.font-text{
+    font-size: 14px;
+    color:red!important;
+}
+/*产品图片*/
+.products ul li img{
+    width: 100%;
+}
+/*产品栏立即购买*/
+.btn_buy{
+    margin-bottom: 20px;
+    font-size: 12px;
+    color:#fff;
+    font-weight: 400;
+}

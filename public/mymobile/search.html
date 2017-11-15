@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <!--视口-->
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+    <title>移动端首页</title>
+    <!--导入zepto.css样式-->
+    <link rel="stylesheet" href="./lib/fa/css/font-awesome.min.css"/>
+    <!--导入mui.css样式-->
+    <link rel="stylesheet" href="./lib/mui/css/mui.min.css"/>
+    <link rel="stylesheet" href="css/common.css"/>
+    <!--导入search.css控制中间样式-->
+    <link rel="stylesheet" href="css/search.css"/>
+</head>
+<body>
+
+<!--大容器居中-->
+<div class="container">
+    <!--头部-->
+    <div class="header">
+        <!--左边跳转上一页-->
+        <a href="javascript:window.history.back();" class="fanhui mui-icon mui-icon-back"></a>
+        <!--中间文字-->
+        <h3>搜索中心</h3>
+        <!--搜索框-->
+        <a href="#" class="search fa fa-search"></a>
+    </div>
+    <!--主体:无需要滚动-->
+    <div class="main">
+        <div class="lt_wrapper">
+            <!--滚动区域-->
+            <div class="mui-scroll-wrapper">
+                <div class="mui-scroll">
+                    <!--这里放置真实显示的DOM内容-->
+                    <!--搜索框-->
+                    <div class="search_txt">
+                        <input type="text" class="search_key" placeholder="请输入搜索关键字"/>
+                        <button class="search_btn mui-btn-primary">搜索</button>
+                    </div>
+                    <!--搜索历史-->
+                    <div class="search_history">
+                        <span class="history mui-pull-left">搜索历史</span>
+                        <span class="del_history mui-pull-right"><i class="fa fa-trash btn_empty"></i>清空记录</span>
+                    </div>
+                    <!--搜索历史记录缓存-->
+                    <div class="history_record">
+                        <ul>
+                           <!--挖个坑-->
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--底部-->
+    <div class="footer">
+        <!--列表-->
+        <ul>
+            <li>
+                <a href="index.html">
+                    <span class="fa fa-home"></span>
+                    <p>首页</p>
+                </a>
+            </li>
+            <li class="now">
+                <a href="category.html">
+                    <span class="fa fa-bars"></span>
+                    <p>分类</p>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <span class="fa fa-shopping-cart"></span>
+                    <p>购物车</p>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <span class="fa fa-user"></span>
+                    <p>会员中心</p>
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>
+
+
+
+<!--创建历史记录模板引擎-->
+<script type="text/html" id="tpl">
+    {{each rows v i}}
+    <li class="mui-clearfix">
+        <a href="#">
+            <span class="record mui-pull-left">{{v}}</span>
+            <i class="mui-icon mui-icon-closeempty mui-pull-right btn_del" data-id="{{i}}"></i>
+        </a>
+    </li>
+    {{/each}}
+</script>
+
+
+
+<!--导入zepto.js-->
+<script  src="lib/zepto/zepto.min.js"></script>
+<!--导入mui.js-->
+<script src="lib/mui/js/mui.min.js"></script>
+<!--导入公共.js-->
+<script src="js/common.js"></script>
+<!--导入search.js-->
+<script src="js/search.js"></script>
+<!--导入模板引擎-->
+<script src="./lib/template/template-web.js"></script>
+</body>
+</html>

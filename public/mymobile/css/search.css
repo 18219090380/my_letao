@@ -1,0 +1,50 @@
+.main .search_txt{
+    padding:10px;
+    position: relative;
+}
+/*搜索框*/
+.main .search_key{
+    font-size: 12px;
+    border:1px solid #007aff;
+    border-radius: 5px;
+    height: 34px;
+    margin-bottom: 0px;/*除掉margin*/
+}
+/*搜索按钮*/
+.search_btn{
+    position: absolute;
+    right: 10px;
+    top:10px;
+    border-radius: 0px 5px 5px 0px;
+}
+/*搜索历史记录*/
+.search_history{
+    padding:0px 10px;
+    height: 30px;
+    line-height: 30px;
+}
+.search_history span{
+    font-size: 12px;
+    color:#666;
+}
+/*搜索记录缓存*/
+.history_record{
+    padding:0px 10px;
+}
+/*控制每一个li标签*/
+.history_record ul li{
+    border:1px dotted red;
+    margin-top:-1px;
+    line-height: 30px;
+    padding-left: 10px;
+    font-size: 12px;
+    margin-bottom: 10px;/*控制滚动的时候留出10px*/
+}
+/*控制删除样式*/
+.history_record ul li .btn_del{
+    display: block;
+    line-height: 30px;
+    height: 30px;
+    font-size: 20px;
+    color:#666;
+}

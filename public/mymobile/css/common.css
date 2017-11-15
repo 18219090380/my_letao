@@ -1,0 +1,133 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+html,body{
+    height: 100%;
+}
+/*顶部*/
+.header h3{
+    margin:0px;
+}
+ul{
+    list-style: none;
+}
+/*大容器*/
+.container{
+    min-width: 320px;
+    max-width: 640px;
+    height: 100%;
+    width: 100%;
+    margin: 0 auto;
+    /*position: absolute;*/
+    overflow: hidden;
+    position: relative;
+}
+/*顶部高度*/
+.header{
+    height: 45px;
+    width: 100%;
+    background-color: #069;
+    position: absolute;
+    top:0px;
+    left: 0px;
+}
+/*顶部左边房子*/
+.fangzi{
+    position: absolute;
+    left: 0px;
+    top:0px;
+    color: #ffffff;
+    font-size: 14px;
+    height: 45px;
+    width: 45px;
+    line-height: 45px;
+    text-align: center;
+}
+/*分类页的返回*/
+.fanhui{
+    position: absolute;
+    left: 0px;
+    top:0px;
+    color: #ffffff;
+    font-size: 20px;
+    height: 45px;
+    width: 45px;
+    line-height: 45px;
+    text-align: center;
+}
+/*右边搜索框*/
+.search{
+    position: absolute;
+    right: 0px;
+    top:0px;
+    color: #fff;
+    font-size: 14px;
+    height: 45px;
+    width: 45px;
+    line-height: 45px;
+    text-align: center;
+}
+.header h3{
+    text-align: center;
+    line-height: 45px;
+    color: #fff;
+    font-weight: 400;
+    font-size: 16px;
+    margin:0px;
+}
+
+/*主体*/
+.main{
+    width:100%;
+    height:100%;
+    background-color: #fff;
+    padding-top:45px;
+    padding-bottom: 55px;
+}
+/*滚动区域赋一个父盒子*/
+.main .lt_wrapper{
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+
+/*底部*/
+.footer{
+    height: 55px;
+    width: 100%;
+    background-color: #069;
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+}
+/*底部li标签*/
+.footer ul li{
+    float: left;
+    width: 25%;
+    border-right: 1px solid #ccc;
+    height: 55px;
+    text-align: center;
+    padding-top:10px;
+}
+/*为a标签和p标签设置一个类为now*/
+.footer ul li.now a span{
+    color:darkorange;
+}
+.footer ul li.now a p{
+    color:darkorange;
+}
+/*控制底部a标签中的p*/
+.footer ul li a p{
+    color:#fff;
+    font-size: 12px;
+}
+/*控制底部a标签中的span标签*/
+.footer ul li a span{
+    color:#fff;
+    font-size: 12px;
+}
+
+

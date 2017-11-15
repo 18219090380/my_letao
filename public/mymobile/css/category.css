@@ -1,0 +1,55 @@
+/*分类页*/
+/*左边下拉*/
+.main .lt_wrapper_lf{
+    width: 90px;
+    position: relative;/*给一个相对定位,因为滚动默认是绝对定位*/
+    height: 100%;
+    float: left;/*给以一个浮动,让右边的盒子上来*/
+}
+/*左边内容*/
+.nav_list ul li a{
+    display: block;
+    line-height:50px;
+    height: 50px;
+    text-align: center;
+    color: #666666;
+    border-top:1px solid red;
+    border-right: 1px solid red;
+    background-color: #f2dede;
+    font-size: 16px;
+}
+/*单独添加一个now类控制第一个li标签*/
+.nav_list ul li a.now{
+    border-top:none;
+    border-right: none;
+    background-color: #ffffff;
+}
+
+/*右边区域*/
+.main .lt_wrapper_rt{
+    /*margin-left: 90px;*/
+    overflow: hidden;/*可以不给margin,直接overflow:hidden触发BFC,不和流氓在一起*/
+    position: relative;/*给一个相对定位,因为滚动默认是绝对定位*/
+    height: 100%;
+}
+/*右边区域图片*/
+.main .lt_wrapper_rt .nav_list_content  img{
+    width: 62px;
+    height: 62px;
+}
+/*控制右边区域li标签的宽度分配*/
+.main .lt_wrapper_rt .nav_list_content li{
+    width: 33.33%;
+    float: left;
+    text-align: center;
+    margin-bottom: 2px;
+}
+/*控制右边的文本样式*/
+.main .lt_wrapper_rt .nav_list_content p{
+    font-size: 12px;
+}
+/*控制数据渲染p标签*/
+.none_data{
+    padding:10px;
+    font-size: 18px;
+}

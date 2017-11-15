@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <!--视口-->
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+    <title>移动端首页</title>
+    <!--导入zepto.css样式-->
+    <link rel="stylesheet" href="./lib/fa/css/font-awesome.min.css"/>
+    <!--导入mui.css样式-->
+    <link rel="stylesheet" href="./lib/mui/css/mui.min.css"/>
+    <link rel="stylesheet" href="css/common.css"/>
+    <!--导入index.css控制中间样式-->
+    <link rel="stylesheet" href="css/category.css"/>
+</head>
+<body>
+
+<!--大容器居中-->
+<div class="container">
+    <!--头部-->
+    <div class="header">
+        <!--左边跳转为跳转上一层地址-->
+        <a href="javascript:window.history.back();" class="fanhui mui-icon mui-icon-back"></a>
+        <!--中间文字-->
+        <h3>乐淘分类</h3>
+        <!--搜索框-->
+        <a href="search.html" class="search fa fa-search"></a>
+    </div>
+    <!--主体-->
+    <div class="main">
+        <!--左边区域-->
+        <div class="lt_wrapper_lf">
+            <!--区域滚动:默认为绝对定位-->
+            <div class="mui-scroll-wrapper">
+                <div class="mui-scroll">
+                    <!--左边内容-->
+                    <div class="nav_list">
+                        <ul>
+                            <!--挖个坑-->
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--右边区域-->
+        <div class="lt_wrapper_rt">
+            <!--区域滚动:默认为绝对定位-->
+            <div class="mui-scroll-wrapper">
+                <div class="mui-scroll">
+                    <!--右边内容-->
+                    <div class="nav_list_content">
+                        <ul>
+                           <!--挖个坑-->
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--底部-->
+    <div class="footer">
+        <!--列表-->
+        <ul>
+            <li>
+                <a href="index.html">
+                    <span class="fa fa-home"></span>
+                    <p>首页</p>
+                </a>
+            </li>
+            <li class="now">
+                <a href="category.html">
+                    <span class="fa fa-bars"></span>
+                    <p>分类</p>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <span class="fa fa-shopping-cart"></span>
+                    <p>购物车</p>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <span class="fa fa-user"></span>
+                    <p>会员中心</p>
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>
+
+
+
+
+<!--创建一级分类导航模板引擎(由于点击一级分类中的每一个a,右边二级分类要显示对应的信息,那么存储一个id)-->
+<script type="text/html" id="tpl">
+    {{each rows v i}}
+    <li><a href="javascript:;" class="{{i==0? 'now':''}}" data-id="{{v.id}}">{{v.categoryName}}</a></li>
+    {{/each}}
+</script>
+
+<!--创建二级分类模板引擎-->
+<script type="text/html" id="tpl1">
+    {{if rows.length==0}}
+    <p class="none_data">暂没有数据</p>
+    {{/if}}
+    {{each rows v i}}
+    <li>
+        <a href="#">
+            <img src="{{v.brandLogo}}" alt=""/>
+            <p>{{v.brandName}}</p>
+        </a>
+    </li>
+    {{/each}}
+</script>
+
+
+<!--导入zepto.js-->
+<script  src="lib/zepto/zepto.min.js"></script>
+<!--导入mui.js-->
+<script src="lib/mui/js/mui.min.js"></script>
+<!--导入公共.js-->
+<script src="js/common.js"></script>
+<!--导入index.js-->
+<script src="js/category.js"></script>
+<!--导入模板引擎-->
+<script src="./lib/template/template-web.js"></script>
+</body>
+</html>
