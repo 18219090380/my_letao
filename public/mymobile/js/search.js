@@ -1,7 +1,6 @@
 /**
  * Created by Administrator on 2017/11/15.
  */
-
 $(function () {
     //功能1:滚动控制初始化
     mui('.mui-scroll-wrapper').scroll({
@@ -16,8 +15,9 @@ $(function () {
     //封装函数:获取本地服务器数据,渲染模板
     function renderStorageData(){
         //2.1获取到本地服务器的值(字符串)--模拟('["张三","李四"]')
-        var history = localStorage.getItem('lt_search_history') || '[]';
+        var history = localStorage.getItem('lt_search_history') || '["张三","李四"]';
 
+        //console.log(history);
         //2.2把字符串转换成数组
         var arr = JSON.parse(history);
 
@@ -91,6 +91,51 @@ $(function () {
         //5.1获取搜索关键字的文本值
         var keyVal = $('.search_key').val();
         console.log(keyVal);
+
+
+        //5.2判断文本框中是否有值,如果没有,提示用户填写(提示消失框)!并不执行以下代码
+        if(keyVal ==''){
+            mui.toast('请输入搜索内容');
+            return false;
+        }
+
+        //5.3清除文本框中的内容(上述已经拿到文本框数据)
+        $('.search_key').val('');
+
+        //5.4(先把历史数据获取到,并转换成数组)把当前文本框拿到的数据存储到本地服务器上(本地服务器自身是一个数组,那么,存储这个数据的时候,就直接放到这个数组的前面,第一个)
+        var stringData = localStorage.getItem('lt_search_history')||'[]';
+
+        //5.5转换成数组
+        var arr = JSON.parse(stringData);
+
+        //5.6把当前这个文本框中的值放到这个转换后的数组的最前面(还有,假设,数组长度超过10,那么就把数组最后一个删除)
+        // (但是,要考虑一个问题,假设在这个数组存在(直接把这个数组中的重复删除1个)!或者不存在的情况下(直接添加咋这个数组的第一位))
+
+        //var cunzai = arr.indexOf(keyVal);//判断文本框中的值是否在数组中第一次出现
+        //console.log(cunzai);
+
+        //5.6.1假设存在,就是不是-1,那么就在数组中把这个直接删除就可以
+        //if(cunzai != -1){
+        //    //5.6.2存在就直接删除
+        //    arr.splice(cunzai,1);
+        //}
+
+        //5.8判断数组的 长度是否大于10,如果是,那么就把数组的最后一项删除
+        if(arr.length > 10){
+            //删除最后一条数据
+            arr.pop();
+        }
+
+        //5.7通过上面操作之后,不存在,那么,就直接放到这个数组的最前面(第一项)
+        arr.unshift(keyVal);
+
+
+        //5.9操作完数据之后,重新设置到本地服务器上(需要把数组转换成字符串)
+        localStorage.setItem('lt_search_history',JSON.stringify(arr));
+
+        //6.0重新获取本地服务器上的数据,重新渲染
+        renderStorageData();
+
     })
 
 });
